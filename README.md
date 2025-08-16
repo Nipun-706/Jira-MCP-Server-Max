@@ -65,6 +65,63 @@ Now you can ask Copilot to, for example:
 
 and it will leverage your MCP server to execute those commands.
 
+## Steps to Connect with Cline (Alternative MCP Client)
+
+### 1. Clone and Setup Repository
+```bash
+git clone https://github.com/Nipun-706/Jira-MCP-Server-Max.git
+cd Jira-MCP-Server-Max
+npm install
+npm run build
+```
+
+### 2. Open Cline in VS Code
+- Install the Cline extension in VS Code
+- Open your project in VS Code
+
+### 3. Configure Cline MCP Settings
+Create or edit `cline_mcp_settings.json` in your VS Code workspace with the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "jira-server": {
+      "timeout": 60,
+      "command": "D:/node/node.exe",
+      "args": [
+        "D:/coding/jira/Jira-MCP-Server/build/index.js"
+      ],
+      "cwd": "D:/coding/jira/Jira-MCP-Server",
+      "env": {
+        "JIRA_HOST": "your-domain.atlassian.net",
+        "JIRA_EMAIL": "your-email@example.com",
+        "JIRA_API_TOKEN": "your-api-token"
+      },
+      "type": "stdio",
+      "disabled": false
+    }
+  }
+}
+```
+
+**Configuration Notes:**
+- Replace `D:/node/node.exe` with your actual Node.js executable path
+- Update the `args` and `cwd` paths to match your project location
+- Replace placeholder values in `env` with your actual Jira credentials
+- Set `timeout` to 60 seconds to handle longer operations
+
+### 4. Apply Configuration
+1. Save the `cline_mcp_settings.json` file
+2. Restart VS Code (or reload window: `Ctrl+Shift+P` → **Reload Window**)
+3. In Cline's MCP panel, verify that `jira-server` appears as enabled
+4. Check logs in Cline Output if the server doesn't connect
+
+### 5. Test Integration
+Once connected, you can interact with Cline using natural language:
+- "Show me all issues in the CCS project"
+- "Create a new bug report for the login issue"
+- "List all high-priority tasks assigned to me"
+
 <a href="https://glama.ai/mcp/servers/lblw6pvk7i">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/lblw6pvk7i/badge" alt="Jira Server MCP server" />
 </a>
