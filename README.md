@@ -122,6 +122,58 @@ Once connected, you can interact with Cline using natural language:
 - "Create a new bug report for the login issue"
 - "List all high-priority tasks assigned to me"
 
+## Steps to Connect with Windsurf
+
+### 1. Clone and Setup Repository
+```bash
+git clone https://github.com/Nipun-706/Jira-MCP-Server-Max.git
+cd Jira-MCP-Server-Max
+npm install
+npm run build
+```
+
+### 2. Configure Windsurf MCP Settings
+Add the following configuration to your Windsurf MCP settings under the `"mcpServers"` object:
+
+```json
+{
+  "mcpServers": {
+    "jira-server": {
+      "type": "stdio",
+      "command": "D:/node/node.exe",
+      "args": [
+        "D:/coding/jira/Jira-MCP-Server/build/index.js"
+      ],
+      "cwd": "D:/coding/jira/Jira-MCP-Server",
+      "timeout": 60,
+      "env": {
+        "JIRA_HOST": "your-domain.atlassian.net",
+        "JIRA_EMAIL": "your-email@example.com",
+        "JIRA_API_TOKEN": "your-api-token-here"
+      },
+      "disabledTools": [],
+      "disabled": false
+    }
+  }
+}
+```
+
+**Configuration Notes:**
+- Replace `D:/node/node.exe` with your actual Node.js executable path
+- Update the `args` and `cwd` paths to match your project location
+- Replace placeholder values in `env` with your actual Jira credentials
+- Set `timeout` to 60 seconds to handle longer operations
+- Keep `disabledTools` empty to enable all available tools
+
+### 3. Apply Configuration and Test
+1. Save your Windsurf MCP configuration
+2. Restart Windsurf to apply the changes
+3. Verify that `jira-server` appears in your MCP servers list
+4. Test with natural language commands like:
+   - "List all projects in my Jira instance"
+   - "Show me open issues in project CCS"
+   - "Create a new task for API integration"
+
 <a href="https://glama.ai/mcp/servers/lblw6pvk7i">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/lblw6pvk7i/badge" alt="Jira Server MCP server" />
 </a>
