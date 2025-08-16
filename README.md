@@ -1,13 +1,69 @@
-# Jira MCP Server
+# Jira MCP Server Max
 
-[![smithery badge](https://smithery.ai/badge/@George5562/Jira-MCP-Server)](https://smithery.ai/server/@George5562/Jira-MCP-Server)
 [![MCP](https://badge.mcpx.dev/default)](https://modelcontextprotocol.io)
 [![Claude](https://img.shields.io/badge/Claude-AI-D79943)](https://claude.ai)
 [![Cursor](https://img.shields.io/badge/Cursor-Editor-009EFF)](https://cursor.sh)
 
-Speak to Jira in natural language to get information on and modify your project. Use it with Claude Desktop in combination with a custom README that you will create with project information, so that you can delegate PM tasks, (e.g. given yoou have a list of my team and their specialities, assign any new issue to the most relevant person).
+A powerful Model Context Protocol (MCP) server for Jira integration, providing tools to manage Jira projects, issues, and bulk operations. Speak to Jira in natural language to get information on and modify your project.
 
 Built using the [Model Context Protocol](https://github.com/modelcontextprotocol).
+
+## Steps to Connect Your Jira-MCP-Server-Max in VS Code with Copilot (MCP Integration)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Nipun-706/Jira-MCP-Server-Max.git
+cd Jira-MCP-Server-Max
+npm install
+npm run build
+```
+
+### 2. Open the Project in VS Code
+Launch VS Code from the project's root directory.
+
+### 3. Trigger the MCP Setup
+- Press `Ctrl + Shift + P` (`Cmd + Shift + P` on Mac) to open the Command Palette
+- Search for and select **MCP: Add Server**
+
+### 4. Add Your Server in .vscode/mcp.json
+VS Code will open (or create) `.vscode/mcp.json`. Add this configuration:
+
+```json
+{
+  "servers": {
+    "my-mcp-server-2b4beb1a": {
+      "name": "jira-server",
+      "command": "node",
+      "args": ["${workspaceFolder}/build/index.js"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "JIRA_HOST": "aiworkshopnipun.atlassian.net",
+        "JIRA_EMAIL": "your-email@example.com",
+        "JIRA_API_TOKEN": "your-api-token"
+      },
+      "type": "stdio"
+    }
+  }
+}
+```
+
+**Key notes:**
+- Use `"node"` as the command, so it relies on your installed Node.js version
+- Use `${workspaceFolder}` to avoid hard-coded paths and make it portable
+- Keep sensitive values like API tokens out of source control—consider using environment variable placeholders or .env files
+
+### 5. Save the File and Add the Server
+After saving, you should see a prompt like "Add Server" or an indicator that VS Code has detected your MCP server. Click to connect.
+
+### 6. MCP Server Should Be Listed
+In the Copilot / MCP panel, you should now see `jira-server` with its available tools (e.g., `get_projects`, `get_issues`).
+
+### 7. Interact with the Server
+Now you can ask Copilot to, for example:
+- "List all projects in Jira"
+- "Get issues in project CCS"
+
+and it will leverage your MCP server to execute those commands.
 
 <a href="https://glama.ai/mcp/servers/lblw6pvk7i">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/lblw6pvk7i/badge" alt="Jira Server MCP server" />
