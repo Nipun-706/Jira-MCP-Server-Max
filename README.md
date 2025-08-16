@@ -122,9 +122,7 @@ Once connected, you can interact with Cline using natural language:
 - "Create a new bug report for the login issue"
 - "List all high-priority tasks assigned to me"
 
-<a href="https://glama.ai/mcp/servers/lblw6pvk7i">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/lblw6pvk7i/badge" alt="Jira Server MCP server" />
-</a>
+
 
 The server enables:
 
