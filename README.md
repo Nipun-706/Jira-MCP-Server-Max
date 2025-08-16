@@ -174,16 +174,14 @@ Add the following configuration to your Windsurf MCP settings under the `"mcpSer
    - "Show me open issues in project CCS"
    - "Create a new task for API integration"
 
-<a href="https://glama.ai/mcp/servers/lblw6pvk7i">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/lblw6pvk7i/badge" alt="Jira Server MCP server" />
-</a>
+## Available Tools
 
-The server enables:
+The Jira MCP Server provides the following tools:
 
-- Project creation and configuration
-- Issue and subtask management
-- Issue linking and dependencies
-- Automated issue workflows
+### Core Tools
+- **get_projects** - List all Jira projects
+- **get_issues** - Get project issues with JQL filtering  
+- **create_issues_bulk** - Create multiple Jira issues at once
 
 ## Configuration
 
@@ -192,8 +190,6 @@ Required environment variables:
 - `JIRA_HOST`: Your Jira instance hostname
 - `JIRA_EMAIL`: Your Jira account email
 - `JIRA_API_TOKEN`: API token from https://id.atlassian.com/manage-profile/security/api-tokens
-
-## Available Tools
 
 ### 1. User Management
 
