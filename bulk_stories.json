@@ -1,0 +1,58 @@
+{
+  "issues": [
+    {
+      "summary": "Chatbot Development",
+      "issueType": "Epic",
+      "projectKey": "CCS",
+      "description": "Develop an AI-powered chatbot to handle user queries and provide responses."
+    },
+    {
+      "summary": "Natural Language Processing (NLP) Integration",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want the chatbot to understand natural language queries so that I can communicate in a conversational manner.\n\nAcceptance Criteria:\n- The chatbot should correctly interpret user queries in plain language.\n- The system should handle synonyms, spelling mistakes, and varied sentence structures.\n- The NLP engine should return structured intents and entities.\n- Errors in interpretation should trigger a fallback response.",
+      "parent": "CCS-2",
+      "priority": "High"
+    },
+    {
+      "summary": "Chatbot UI/UX Design",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want an intuitive and visually clear chat interface so that I can easily interact with the bot.\n\nAcceptance Criteria:\n- The interface should support real-time chat with typing indicators.\n- The chat window should be responsive across desktop and mobile devices.\n- Quick-reply buttons and rich media (links, images) should be supported.\n- Users should see timestamps and sender labels on all messages.",
+      "parent": "CCS-2",
+      "priority": "Medium"
+    },
+    {
+      "summary": "Context Management",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want the chatbot to remember context across my conversation so that I don't have to repeat myself.\n\nAcceptance Criteria:\n- The chatbot should retain user context (e.g., previous questions, selections) for the duration of the session.\n- The system should allow reference to prior answers within the same chat.\n- Context should reset after session timeout or explicit user command.\n- Incorrect context usage should trigger clarification prompts.",
+      "parent": "CCS-2",
+      "priority": "High"
+    },
+    {
+      "summary": "Integration with Knowledge Base",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want the chatbot to fetch information from the knowledge base so that I can receive accurate answers to my queries.\n\nAcceptance Criteria:\n- The chatbot should connect to the company's internal knowledge base APIs.\n- Queries should return the most relevant article or snippet.\n- The chatbot should provide links for users to read full articles.\n- If no relevant data is found, a fallback response should be triggered.",
+      "parent": "CCS-2",
+      "priority": "High"
+    },
+    {
+      "summary": "Error Handling & Fallback Responses",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want the chatbot to provide fallback responses when it cannot understand me so that I am not left without help.\n\nAcceptance Criteria:\n- The chatbot should display a helpful fallback message (e.g., 'Sorry, I didn't understand that').\n- The chatbot should offer alternative suggestions or guide the user.\n- After repeated failures, the chatbot should suggest escalation to a human agent.\n- All fallback cases should be logged for review and improvement.",
+      "parent": "CCS-2",
+      "priority": "Medium"
+    },
+    {
+      "summary": "Escalation to Human Agent",
+      "issueType": "Story",
+      "projectKey": "CCS",
+      "description": "User Story: As a chatbot user, I want to escalate my query to a human agent so that I can get help for complex issues the bot cannot resolve.\n\nAcceptance Criteria:\n- The chatbot should detect when a user requests a human agent.\n- The chatbot should offer an option like 'Connect to Support Agent' when needed.\n- Once escalated, the bot should stop responding and transfer the conversation.\n- The system should notify the agent with the conversation history.\n- If no agent is available, the user should be informed and given alternative contact options.",
+      "parent": "CCS-2",
+      "priority": "High"
+    }
+  ]
+}

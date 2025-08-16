@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "my-mcp-server-2b4beb1a": {
+      "name": "jira-server",
+      "command": "node",
+      "args": ["D:/coding/jira/Jira-MCP-Server/build/index.js"],
+      "cwd": "D:/coding/jira/Jira-MCP-Server",
+      "env": {
+        "JIRA_HOST": "your-jira-instance.atlassian.net",
+        "JIRA_EMAIL": "your-email@example.com",
+        "JIRA_API_TOKEN": "your-api-token-here"
+      }
+    }
+  }
+}
