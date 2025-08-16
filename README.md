@@ -37,9 +37,9 @@ VS Code will open (or create) `.vscode/mcp.json`. Add this configuration:
       "args": ["${workspaceFolder}/build/index.js"],
       "cwd": "${workspaceFolder}",
       "env": {
-        "JIRA_HOST": "aiworkshopnipun.atlassian.net",
-        "JIRA_EMAIL": "your-email@example.com",
-        "JIRA_API_TOKEN": "your-api-token"
+        "JIRA_HOST": "xxxx",
+        "JIRA_EMAIL": "xxx",
+        "JIRA_API_TOKEN": "xxx"
       },
       "type": "stdio"
     }
